@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
+
 export const NewOrder = () => {
-  // Get data of only this user. store it in redux
-  // GET /orders?owner_name=john will give you all order of user john
-  //  on submit click create a new order, new order has status `Not Accepted`
+
+
   const  user=useSelector((store)=>store.userStatus)
   const [pastData,setPastdata]=useState([])
   const [newOrder,setNewOrder]=useState({
@@ -13,6 +14,7 @@ export const NewOrder = () => {
     cost:"",
     status: "Not Accepted"
   })
+
   const updateOrder=(data)=>{
     setNewOrder({
  ...newOrder,
@@ -23,6 +25,7 @@ export const NewOrder = () => {
   useEffect(()=>{
     getData()
   },[])
+  
 const getData=async()=>{
   let res=await fetch(`http://localhost:8080/orders?owner_name=${user[0].username}`)
   let data=await res.json()

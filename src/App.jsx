@@ -28,14 +28,6 @@ function App() {
       </div>
 
       <Routes>
-        {/* Routes are as follows:
-        Route      Component
-        /           Home
-        /login      Login
-        /logout     Logout
-        /orders     Orders    Protected
-        /neworder   NewOrder  Protected
-        */}
          <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />

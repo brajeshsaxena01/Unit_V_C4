@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch ,useSelector} from "react-redux";
 import {addStatus} from "../Redux/actions"
 import { useNavigate } from "react-router-dom";
+
+
 export const Login = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
@@ -9,6 +11,7 @@ export const Login = () => {
     username:"",
     password:""
   })
+
 
   const updateData=(target)=>{
     setData({
@@ -46,6 +49,7 @@ export const Login = () => {
       />
       {/* On this button click make network req to find user with same username and password */}
       {/* get his role, if role is `admin` take him to `/orders` page otherwise take him to `/neworder` */}
+      
       <button onClick={()=>getUser()} className="submit">Login</button>
     </div>
   );

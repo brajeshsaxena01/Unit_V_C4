@@ -9,6 +9,8 @@ export const Orders = () => {
   useEffect(()=>{
     Allorders()
   },[])
+
+  
   const Allorders=async()=>{
    let res=await fetch("http://localhost:8080/orders")
    let data=await res.json()
